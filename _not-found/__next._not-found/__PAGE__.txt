@@ -1,0 +1,28 @@
+2:"$Sreact.fragment"
+3:"/_next/static/chunks/0umf92h1sb77c.js"
+4:"/_next/static/chunks/1v3mrx5a51qtu.js"
+5:"/_next/static/chunks/1ri8ywksnjwdh.js"
+6:"/_next/static/chunks/2j9ck9uzauq05.js"
+7:I[39756,["$3","$4","$5","$6"],"default"]
+8:I[37457,["$3","$4","$5","$6"],"default"]
+d:I[97367,["$3","$4","$5","$6"],"OutletBoundary"]
+e:"$Sreact.suspense"
+11:"ViewportBoundary"
+12:I[97367,["$3","$4","$5","$6"],"$11"]
+13:"MetadataBoundary"
+14:I[97367,["$3","$4","$5","$6"],"$13"]
+15:I[27201,["$3","$4","$5","$6"],"IconMark"]
+a:X
+a:C
+b:X
+c:[["children",{"s":"__PAGE__","h":160,"d":{"r":["$","$2","c",{"children":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],null,["$","$Ld",null,{"children":["$","$e",null,{"name":"Next.MetadataOutlet","children":"$@f"}]}]]}],"p":"$@10","v":null,"s":"$b"}}]]
+1:[["children",{"s":"/_not-found","h":64,"d":{"r":["$","$2","c",{"children":[null,["$","$L7",null,{"parallelRouterKey":"children","template":["$","$L8",null,{}]}]]}],"p":"$@9","v":"$a","s":"$b"},"c":"$Qc"}]]
+0:{"t":{"t":{"s":"","h":16,"c":"$Q1"},"h":{"r":["$","$2","h",{"children":[["$","meta",null,{"name":"robots","content":"noindex"}],["$","$L12",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","2",{"name":"theme-color","content":"#1d4d2d"}]]}],["$","$L14",null,{"children":[["$","div",null,{"hidden":true,"children":["$","$e",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"Ramraj Cotton & Ramyyam – Indian Traditional Wear & Sarees"}],["$","meta","1",{"name":"description","content":"Official online store for Ramraj Cotton & Ramyyam. Shop 100% pure cotton Dhotis, Ottiko Kattiko Velcro Dhotis, Formal White Shirts, Kerala Kasavu Sarees, Kanchipuram Silk & Kurtis since 1983."}],["$","meta","2",{"name":"keywords","content":"ramraj cotton,ramyyam sarees,ottiko kattiko,velcro dhoti,kasavu saree,kerala saree,veshti,white shirt,panchakacham,cotton dhoti,little stars boys,pattu pavadai"}],["$","meta","3",{"name":"robots","content":"index, follow"}],["$","meta","4",{"property":"og:title","content":"Ramraj Cotton & Ramyyam – Pure Cotton Dhotis, Shirts & Sarees"}],["$","meta","5",{"property":"og:description","content":"100% pure combed cotton & Silk Mark certified traditional wear crafted since 1983."}],["$","meta","6",{"property":"og:url","content":"https://ramrajcotton.in"}],["$","meta","7",{"property":"og:site_name","content":"Ramraj Cotton & Ramyyam"}],["$","meta","8",{"property":"og:locale","content":"en_IN"}],["$","meta","9",{"property":"og:type","content":"website"}],["$","meta","10",{"name":"twitter:card","content":"summary"}],["$","meta","11",{"name":"twitter:title","content":"Ramraj Cotton & Ramyyam – Pure Cotton Dhotis, Shirts & Sarees"}],["$","meta","12",{"name":"twitter:description","content":"100% pure combed cotton & Silk Mark certified traditional wear crafted since 1983."}],["$","link","13",{"rel":"icon","href":"/favicon.ico?favicon.117ezoe8m31dk.ico","sizes":"48x48","type":"image/x-icon"}],["$","$L15","14",{}]]}]}],null]}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}],"p":"$@16","v":null,"s":"$b"}},"a":"$@17","u":"$@18","b":"CyjP4O0oExYo7ucZ7UbFt"}
+f:null
+18:true
+b:300
+b:C
+17:0
+9:"$undefined"
+16:"$undefined"
+10:"$undefined"

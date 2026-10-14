@@ -1,0 +1,30 @@
+2:"$Sreact.fragment"
+3:"/_next/static/chunks/0umf92h1sb77c.js"
+4:"/_next/static/chunks/1v3mrx5a51qtu.js"
+5:"/_next/static/chunks/1ri8ywksnjwdh.js"
+6:"/_next/static/chunks/2j9ck9uzauq05.js"
+7:I[39756,["$3","$4","$5","$6"],"default"]
+8:I[37457,["$3","$4","$5","$6"],"default"]
+d:"$Sreact.suspense"
+e:"/_next/static/chunks/3-vsguuj9drl3.js"
+f:I[24162,["$3","$4","$5","$6","$e"],"default"]
+10:I[97367,["$3","$4","$5","$6"],"OutletBoundary"]
+13:"ViewportBoundary"
+14:I[97367,["$3","$4","$5","$6"],"$13"]
+15:"MetadataBoundary"
+16:I[97367,["$3","$4","$5","$6"],"$15"]
+17:I[27201,["$3","$4","$5","$6"],"IconMark"]
+a:X
+a:C
+b:X
+c:[["children",{"s":"__PAGE__","h":160,"d":{"r":["$","$2","c",{"children":[["$","$d",null,{"fallback":["$","div",null,{"className":"min-h-screen py-24 flex items-center justify-center","children":["$","div",null,{"className":"liquid-glass rounded-3xl p-8 text-center max-w-sm","children":["$","p",null,{"className":"text-stone-700 font-bold text-sm","children":"Loading handcrafted collections..."}]}]}],"children":["$","$Lf",null,{}]}],[["$","script","script-0",{"src":"/_next/static/chunks/3-vsguuj9drl3.js","async":true}]],["$","$L10",null,{"children":["$","$d",null,{"name":"Next.MetadataOutlet","children":"$@11"}]}]]}],"p":"$@12","v":null,"s":"$b"}}]]
+1:[["children",{"s":"products","h":64,"d":{"r":["$","$2","c",{"children":[null,["$","$L7",null,{"parallelRouterKey":"children","template":["$","$L8",null,{}]}]]}],"p":"$@9","v":"$a","s":"$b"},"c":"$Qc"}]]
+0:{"t":{"t":{"s":"","h":16,"c":"$Q1"},"h":{"r":["$","$2","h",{"children":[null,["$","$L14",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","2",{"name":"theme-color","content":"#1d4d2d"}]]}],["$","$L16",null,{"children":[["$","div",null,{"hidden":true,"children":["$","$d",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"All Collections – Ramraj Cotton & Ramyyam Sarees | Ramraj Cotton & Ramyyam"}],["$","meta","1",{"name":"description","content":"Explore our full range of pure cotton Dhotis, Veshtis, Formal White Shirts, Kerala Kasavu Sarees, Soft Silk, and Kurtis."}],["$","meta","2",{"name":"keywords","content":"ramraj cotton,ramyyam sarees,ottiko kattiko,velcro dhoti,kasavu saree,kerala saree,veshti,white shirt,panchakacham,cotton dhoti,little stars boys,pattu pavadai"}],["$","meta","3",{"name":"robots","content":"index, follow"}],["$","meta","4",{"property":"og:title","content":"Ramraj Cotton & Ramyyam – Pure Cotton Dhotis, Shirts & Sarees"}],["$","meta","5",{"property":"og:description","content":"100% pure combed cotton & Silk Mark certified traditional wear crafted since 1983."}],["$","meta","6",{"property":"og:url","content":"https://ramrajcotton.in"}],["$","meta","7",{"property":"og:site_name","content":"Ramraj Cotton & Ramyyam"}],["$","meta","8",{"property":"og:locale","content":"en_IN"}],["$","meta","9",{"property":"og:type","content":"website"}],["$","meta","10",{"name":"twitter:card","content":"summary"}],["$","meta","11",{"name":"twitter:title","content":"Ramraj Cotton & Ramyyam – Pure Cotton Dhotis, Shirts & Sarees"}],["$","meta","12",{"name":"twitter:description","content":"100% pure combed cotton & Silk Mark certified traditional wear crafted since 1983."}],["$","link","13",{"rel":"icon","href":"/favicon.ico?favicon.117ezoe8m31dk.ico","sizes":"48x48","type":"image/x-icon"}],["$","$L17","14",{}]]}]}],null]}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}],"p":"$@18","v":null,"s":"$b"}},"a":"$@19","u":"$@1a","b":"CyjP4O0oExYo7ucZ7UbFt"}
+11:null
+1a:true
+b:300
+b:C
+19:0
+9:"$undefined"
+18:"$undefined"
+12:"$undefined"

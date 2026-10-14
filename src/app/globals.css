@@ -2,7 +2,7 @@
 
 @layer base {
   :root {
-    --ramraj-ivory: #f4f6f1;
+    --ramraj-ivory: #f8faf7;
     --ramraj-cream: #ffffff;
     --ramraj-gold: #2d6a3d;
     --ramraj-gold-deep: #1d4d2d;
@@ -27,6 +27,8 @@
     color: var(--ramraj-text);
     overflow-x: hidden;
     letter-spacing: -0.01em;
+    position: relative;
+    min-height: 100vh;
   }
 
   ::selection {
@@ -48,21 +50,154 @@
   }
 }
 
+/* ─── LIQUID GLASS DESIGN SYSTEM ─── */
+.liquid-glass {
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.05), inset 0 1px 0 0 rgba(255, 255, 255, 0.85);
+}
+
+.liquid-glass-card {
+  background: rgba(255, 255, 255, 0.70);
+  backdrop-filter: blur(24px) saturate(190%);
+  -webkit-backdrop-filter: blur(24px) saturate(190%);
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.04), inset 0 1px 1px 0 rgba(255, 255, 255, 0.95);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.liquid-glass-card:hover {
+  background: rgba(255, 255, 255, 0.90);
+  border-color: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 20px 45px -10px rgba(45, 106, 61, 0.16), 0 0 20px rgba(201, 168, 76, 0.12), inset 0 1px 1px 0 rgba(255, 255, 255, 1);
+  transform: translateY(-4px);
+}
+
+.liquid-glass-nav {
+  background: rgba(255, 255, 255, 0.80);
+  backdrop-filter: blur(28px) saturate(200%);
+  -webkit-backdrop-filter: blur(28px) saturate(200%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.04), inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+
+.liquid-glass-dark {
+  background: rgba(18, 28, 22, 0.78);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.liquid-glass-pill {
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03), inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  transition: all 0.25s ease;
+}
+
+.liquid-glass-pill:hover {
+  background: rgba(255, 255, 255, 0.92);
+  border-color: rgba(255, 255, 255, 1);
+  box-shadow: 0 6px 20px rgba(45, 106, 61, 0.12), inset 0 1px 0 rgba(255, 255, 255, 1);
+}
+
+.liquid-glass-btn {
+  background: linear-gradient(135deg, rgba(29, 77, 45, 0.92), rgba(45, 106, 61, 0.95));
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 25px rgba(29, 77, 45, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  color: white;
+}
+
+.liquid-glass-btn-rose {
+  background: linear-gradient(135deg, rgba(136, 19, 55, 0.92), rgba(190, 24, 93, 0.95));
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 25px rgba(136, 19, 55, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  color: white;
+}
+
+/* Ambient Fluid Orbs */
+.liquid-orb-1 {
+  position: fixed;
+  top: -8%;
+  left: -5%;
+  width: 550px;
+  height: 550px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(45, 106, 61, 0.14) 0%, rgba(201, 168, 76, 0.08) 50%, transparent 75%);
+  filter: blur(70px);
+  pointer-events: none;
+  z-index: -1;
+  animation: liquidFloat1 18s ease-in-out infinite alternate;
+}
+
+.liquid-orb-2 {
+  position: fixed;
+  top: 35%;
+  right: -8%;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(201, 168, 76, 0.13) 0%, rgba(136, 19, 55, 0.08) 50%, transparent 75%);
+  filter: blur(80px);
+  pointer-events: none;
+  z-index: -1;
+  animation: liquidFloat2 22s ease-in-out infinite alternate;
+}
+
+.liquid-orb-3 {
+  position: fixed;
+  bottom: -10%;
+  left: 25%;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(45, 106, 61, 0.11) 0%, rgba(20, 60, 35, 0.06) 60%, transparent 80%);
+  filter: blur(75px);
+  pointer-events: none;
+  z-index: -1;
+  animation: liquidFloat3 16s ease-in-out infinite alternate;
+}
+
+@keyframes liquidFloat1 {
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(40px, 30px) scale(1.08); }
+  100% { transform: translate(-20px, 50px) scale(0.96); }
+}
+
+@keyframes liquidFloat2 {
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-50px, -40px) scale(1.1); }
+  100% { transform: translate(30px, -20px) scale(0.95); }
+}
+
+@keyframes liquidFloat3 {
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-30px, 40px) scale(1.06); }
+  100% { transform: translate(25px, -30px) scale(0.94); }
+}
+
 @layer components {
   .btn-primary {
-    @apply bg-[#2d6a3d] hover:bg-[#1d4d2d] text-white font-semibold px-6 py-3 rounded-lg transition-all duration-200 shadow-[0_8px_18px_rgba(45,106,61,0.22)] hover:shadow-[0_10px_20px_rgba(29,77,45,0.28)] active:scale-95 inline-flex items-center gap-2;
+    @apply bg-[#2d6a3d] hover:bg-[#1d4d2d] text-white font-semibold px-6 py-3 rounded-xl transition-all duration-200 shadow-[0_8px_18px_rgba(45,106,61,0.22)] hover:shadow-[0_10px_20px_rgba(29,77,45,0.28)] active:scale-95 inline-flex items-center gap-2;
   }
 
   .btn-secondary {
-    @apply border-2 border-[#2d6a3d] text-[#1d4d2d] hover:bg-[#2d6a3d] hover:text-white font-semibold px-6 py-3 rounded-lg transition-all duration-200 inline-flex items-center gap-2;
+    @apply border-2 border-[#2d6a3d] text-[#1d4d2d] hover:bg-[#2d6a3d] hover:text-white font-semibold px-6 py-3 rounded-xl transition-all duration-200 inline-flex items-center gap-2;
   }
 
   .btn-ghost {
-    @apply text-[#2d3f35] hover:text-[#1d4d2d] hover:bg-[#edf5ee] px-4 py-2 rounded-lg transition-all duration-200 inline-flex items-center gap-2;
+    @apply text-[#2d3f35] hover:text-[#1d4d2d] hover:bg-[#edf5ee] px-4 py-2 rounded-xl transition-all duration-200 inline-flex items-center gap-2;
   }
 
   .card {
-    @apply bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden border border-stone-200;
+    @apply bg-white/80 backdrop-blur-xl rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden border border-white/60;
   }
 
   .badge {
@@ -82,7 +217,7 @@
   }
 
   .input-field {
-    @apply w-full px-4 py-3 rounded-lg border border-stone-200 focus:outline-none focus:border-[#2d6a3d] focus:ring-2 focus:ring-[#dfeadf] transition-all duration-200 text-stone-800 bg-white;
+    @apply w-full px-4 py-3 rounded-xl border border-stone-200/80 focus:outline-none focus:border-[#2d6a3d] focus:ring-2 focus:ring-[#dfeadf] transition-all duration-200 text-stone-800 bg-white/85 backdrop-blur-md;
   }
 
   .section-title {

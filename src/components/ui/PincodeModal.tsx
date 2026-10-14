@@ -39,22 +39,22 @@ export default function PincodeModal() {
   ];
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm animate-fadeIn">
-      <div className="bg-white rounded-3xl max-w-md w-full overflow-hidden shadow-2xl flex flex-col">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-md animate-fadeIn">
+      <div className="liquid-glass rounded-3xl max-w-md w-full overflow-hidden shadow-2xl flex flex-col border border-white/80">
         {/* Header */}
-        <div className="p-6 bg-[#1d4d2d] text-white flex items-center justify-between">
+        <div className="p-6 bg-[#1d4d2d]/90 backdrop-blur-md text-white flex items-center justify-between border-b border-white/20">
           <div className="flex items-center gap-2.5">
-            <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center">
+            <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center shadow-sm">
               <MapPin size={20} className="text-[#a9d3ae]" />
             </div>
             <div>
-              <h3 className="font-black text-lg">Check Delivery & COD</h3>
+              <h3 className="font-black text-lg">Check Delivery &amp; COD</h3>
               <p className="text-xs text-[#d1e7d4]">Direct dispatch from Ramraj Mills, Tirupur</p>
             </div>
           </div>
           <button
             onClick={closePincodeModal}
-            className="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white transition-colors"
+            className="p-1.5 liquid-glass-pill rounded-full text-white/80 hover:text-white cursor-pointer"
           >
             <X size={18} />
           </button>

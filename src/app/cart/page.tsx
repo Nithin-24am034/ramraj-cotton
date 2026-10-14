@@ -72,7 +72,7 @@ export default function CartPage() {
   }
 
   return (
-    <div className="min-h-screen bg-stone-50 py-10">
+    <div className="min-h-screen py-10 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">
@@ -85,13 +85,13 @@ export default function CartPage() {
           <div className="flex items-center gap-3">
             <Link
               href="/products"
-              className="px-4 py-2 bg-white border border-stone-300 text-stone-700 hover:text-stone-950 font-bold text-xs rounded-xl transition-colors flex items-center gap-1.5"
+              className="px-4 py-2 liquid-glass-pill text-stone-700 hover:text-stone-950 font-bold text-xs rounded-xl transition-all flex items-center gap-1.5 shadow-sm"
             >
               <ArrowLeft size={14} /> Continue Shopping
             </Link>
             <button
               onClick={clearCart}
-              className="text-xs text-red-600 hover:text-red-700 font-bold flex items-center gap-1 px-3 py-2 rounded-xl hover:bg-red-50 transition-colors"
+              className="text-xs text-red-600 hover:text-red-700 font-bold flex items-center gap-1 px-3 py-2 rounded-xl hover:bg-red-50/70 transition-colors cursor-pointer"
             >
               <Trash2 size={14} /> Clear All
             </button>
@@ -106,9 +106,9 @@ export default function CartPage() {
               return (
                 <div
                   key={key}
-                  className="bg-white rounded-3xl p-5 shadow-sm border border-stone-200 flex flex-col sm:flex-row gap-5"
+                  className="liquid-glass-card rounded-3xl p-5 shadow-sm border border-white/80 flex flex-col sm:flex-row gap-5"
                 >
-                  <div className="relative w-24 h-28 sm:w-28 sm:h-32 rounded-2xl overflow-hidden bg-stone-100 shrink-0 border border-stone-200">
+                  <div className="relative w-24 h-28 sm:w-28 sm:h-32 rounded-2xl overflow-hidden bg-stone-100 shrink-0 border border-white/50">
                     <Image
                       src={item.product.images[0]}
                       alt={item.product.name}

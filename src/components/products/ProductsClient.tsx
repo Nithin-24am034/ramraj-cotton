@@ -341,22 +341,22 @@ export default function ProductsClient({
           {/* Mobile Filter trigger */}
           <button
             onClick={() => setIsMobileFilterOpen(true)}
-            className="lg:hidden flex items-center gap-2 px-4 py-2.5 bg-white border border-stone-300 rounded-xl text-xs font-bold text-stone-800 shadow-sm"
+            className="lg:hidden flex items-center gap-2 px-4 py-2.5 liquid-glass-pill rounded-xl text-xs font-bold text-stone-800 shadow-sm cursor-pointer"
           >
             <SlidersHorizontal size={15} />
             <span>Filters {activeFilterCount > 0 && `(${activeFilterCount})`}</span>
           </button>
 
           {/* Sort selector */}
-          <div className="flex items-center gap-2 bg-white border border-stone-300 rounded-xl px-3 py-2 text-xs shadow-sm">
-            <span className="text-stone-400 font-semibold hidden sm:inline">Sort:</span>
+          <div className="flex items-center gap-2 liquid-glass-pill rounded-xl px-3.5 py-2 text-xs shadow-sm">
+            <span className="text-stone-500 font-semibold hidden sm:inline">Sort:</span>
             <select
               value={filters.sortBy}
               onChange={(e) => setFilters((p) => ({ ...p, sortBy: e.target.value as SortOption }))}
               className="bg-transparent font-bold text-stone-800 focus:outline-none cursor-pointer"
             >
               {sortOptions.map((opt) => (
-                <option key={opt.value} value={opt.value}>
+                <option key={opt.value} value={opt.value} className="bg-white text-stone-800">
                   {opt.label}
                 </option>
               ))}
@@ -367,8 +367,8 @@ export default function ProductsClient({
 
       {/* Main Grid: Sidebar + Products */}
       <div className="grid grid-cols-1 lg:grid-cols-[260px_1fr] gap-8 items-start">
-        {/* Desktop Sidebar */}
-        <div className="hidden lg:block bg-white rounded-3xl p-6 border border-stone-200 shadow-sm sticky top-28">
+        {/* Desktop Sidebar (LIQUID GLASS) */}
+        <div className="hidden lg:block liquid-glass rounded-3xl p-6 border border-white/80 shadow-xl sticky top-28">
           <FiltersPanel />
         </div>
 
@@ -449,24 +449,24 @@ export default function ProductsClient({
             className="fixed inset-0 bg-black/50 backdrop-blur-sm"
             onClick={() => setIsMobileFilterOpen(false)}
           />
-          <div className="relative ml-auto w-full max-w-xs bg-white h-full shadow-2xl p-6 overflow-y-auto flex flex-col justify-between">
+          <div className="relative ml-auto w-full max-w-xs liquid-glass h-full shadow-2xl p-6 overflow-y-auto flex flex-col justify-between border-l border-white/60">
             <div>
               <div className="flex items-center justify-between pb-4 border-b border-stone-200 mb-4">
                 <h3 className="font-black text-stone-900 text-base">Filter Products</h3>
                 <button
                   onClick={() => setIsMobileFilterOpen(false)}
-                  className="p-1 text-stone-400 hover:text-stone-700"
+                  className="p-1.5 liquid-glass-pill rounded-full text-stone-600 hover:text-stone-900 cursor-pointer"
                 >
-                  <X size={20} />
+                  <X size={18} />
                 </button>
               </div>
               <FiltersPanel />
             </div>
 
-            <div className="pt-6 border-t border-stone-200 mt-6">
+            <div className="pt-6 border-t border-stone-200/60 mt-6">
               <button
                 onClick={() => setIsMobileFilterOpen(false)}
-                className="w-full py-3 bg-[#1d4d2d] text-white font-bold text-xs rounded-xl"
+                className="w-full py-3 liquid-glass-btn text-white font-bold text-xs rounded-xl shadow-lg active:scale-95 cursor-pointer"
               >
                 Apply Filters ({filtered.length} results)
               </button>

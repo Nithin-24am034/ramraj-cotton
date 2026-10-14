@@ -63,16 +63,16 @@ export default function CheckoutPage() {
   };
 
   const inputClass =
-    'w-full px-4 py-3 rounded-xl border border-stone-300 focus:outline-none focus:border-[#1d4d2d] focus:ring-2 focus:ring-[#1d4d2d]/20 transition-all text-sm text-stone-900 bg-white font-medium';
+    'w-full px-4 py-3 rounded-xl border border-white/80 focus:outline-none focus:border-[#1d4d2d] focus:ring-2 focus:ring-[#1d4d2d]/20 transition-all text-sm text-stone-900 bg-white/80 backdrop-blur-md font-medium shadow-inner placeholder:text-stone-400';
 
   if (items.length === 0 && step !== 3) {
     return (
-      <div className="min-h-screen bg-stone-50 flex items-center justify-center p-6">
-        <div className="text-center max-w-sm mx-auto py-16 bg-white rounded-3xl p-8 border border-stone-200 shadow-sm">
-          <p className="text-stone-500 text-sm mb-4">Your shopping bag is currently empty.</p>
+      <div className="min-h-screen flex items-center justify-center p-6">
+        <div className="text-center max-w-sm mx-auto py-16 liquid-glass rounded-3xl p-8 shadow-xl">
+          <p className="text-stone-600 text-sm mb-4 font-medium">Your shopping bag is currently empty.</p>
           <Link
             href="/products"
-            className="px-6 py-3 bg-[#1d4d2d] hover:bg-[#183e27] text-white font-bold text-xs rounded-xl shadow inline-block"
+            className="liquid-glass-btn px-6 py-3 text-white font-bold text-xs rounded-xl shadow-lg inline-block"
           >
             Explore Collections
           </Link>
@@ -84,8 +84,8 @@ export default function CheckoutPage() {
   // Step 3: Success Screen
   if (step === 3) {
     return (
-      <div className="min-h-screen bg-stone-50 flex items-center justify-center p-4 py-12">
-        <div className="bg-white rounded-3xl shadow-xl p-8 sm:p-10 text-center max-w-lg w-full border border-stone-200" role="main">
+      <div className="min-h-screen flex items-center justify-center p-4 py-12">
+        <div className="liquid-glass rounded-3xl shadow-2xl p-8 sm:p-10 text-center max-w-lg w-full" role="main">
           <div className="relative h-14 w-48 mx-auto mb-4">
             <Image
               src="/images/ramraj-logo.jpg"
@@ -95,26 +95,26 @@ export default function CheckoutPage() {
               sizes="200px"
             />
           </div>
-          <div className="w-16 h-16 rounded-full bg-emerald-100 flex items-center justify-center mx-auto mb-4">
+          <div className="w-16 h-16 rounded-full bg-emerald-100/80 backdrop-blur-md flex items-center justify-center mx-auto mb-4 border border-emerald-200 shadow-sm">
             <CheckCircle2 size={36} className="text-emerald-600" />
           </div>
-          <span className="text-[10px] font-black uppercase tracking-widest text-[#1d4d2d] bg-[#edf5ee] px-3 py-1 rounded-full inline-block mb-2">
+          <span className="text-[10px] font-black uppercase tracking-widest text-[#1d4d2d] bg-[#edf5ee]/90 px-3 py-1 rounded-full inline-block mb-2 border border-emerald-200/50">
             Payment Verified • Dispatch Initiated
           </span>
           <h1 className="text-2xl sm:text-3xl font-black text-stone-900 mb-2">Order Confirmed! 🎉</h1>
           <p className="text-stone-600 text-xs sm:text-sm leading-relaxed mb-1">
             Thank you, <strong>{form.firstName} {form.lastName}</strong>! Your traditional handlooms are being carefully inspected and prepared for dispatch.
           </p>
-          <p className="text-stone-400 text-xs mb-6">
+          <p className="text-stone-500 text-xs mb-6">
             A confirmation receipt and SMS tracking link has been sent to <strong>{form.phone}</strong> &amp; <strong>{form.email}</strong>.
           </p>
 
-          <div className="bg-stone-50 border border-stone-200 rounded-2xl p-5 mb-6 text-left space-y-3">
-            <div className="flex items-center justify-between pb-2 border-b border-stone-200">
+          <div className="bg-white/60 backdrop-blur-md border border-white/80 rounded-2xl p-5 mb-6 text-left space-y-3 shadow-inner">
+            <div className="flex items-center justify-between pb-2 border-b border-stone-200/60">
               <span className="text-xs text-stone-500">Order ID:</span>
               <span className="font-mono font-black text-sm text-[#1d4d2d]">#{confirmedOrderId}</span>
             </div>
-            <div className="flex items-center justify-between pb-2 border-b border-stone-200">
+            <div className="flex items-center justify-between pb-2 border-b border-stone-200/60">
               <span className="text-xs text-stone-500">Delivery Address:</span>
               <span className="text-xs font-bold text-stone-800 text-right truncate max-w-[200px]">
                 {form.address}, {form.city} – {form.pincode}
@@ -129,13 +129,13 @@ export default function CheckoutPage() {
           <div className="flex flex-col gap-2.5">
             <Link
               href="/track-order"
-              className="w-full py-3.5 bg-[#1d4d2d] hover:bg-[#183e27] text-white font-bold text-xs rounded-xl shadow transition-all flex items-center justify-center gap-2"
+              className="w-full py-3.5 liquid-glass-btn text-white font-bold text-xs rounded-xl shadow-lg transition-all flex items-center justify-center gap-2"
             >
               <Truck size={16} /> Track Order Live Status
             </Link>
             <Link
               href="/products"
-              className="w-full py-3 bg-stone-100 hover:bg-stone-200 text-stone-800 font-bold text-xs rounded-xl transition-all"
+              className="w-full py-3 liquid-glass-pill hover:bg-white text-stone-800 font-bold text-xs rounded-xl transition-all"
             >
               Continue Shopping
             </Link>
@@ -146,20 +146,20 @@ export default function CheckoutPage() {
   }
 
   return (
-    <div className="min-h-screen bg-stone-50 py-10">
+    <div className="min-h-screen py-10">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="flex items-center justify-between gap-4 mb-8">
           <div className="flex items-center gap-4">
             <Link
               href="/cart"
-              className="p-2.5 bg-white border border-stone-200 rounded-xl hover:bg-stone-100 text-stone-700 transition-colors"
+              className="p-2.5 liquid-glass-pill rounded-xl hover:bg-white text-stone-700 transition-colors shadow-sm"
             >
               <ArrowLeft size={18} />
             </Link>
             <div>
-              <h1 className="text-2xl font-black text-stone-900 tracking-tight">Checkout</h1>
-              <p className="text-xs text-stone-500">Encrypted payment &amp; direct dispatch from Tirupur Mills</p>
+              <h1 className="text-2xl sm:text-3xl font-black text-stone-900 tracking-tight">Checkout</h1>
+              <p className="text-xs text-stone-600 font-medium">Encrypted payment &amp; direct dispatch from Tirupur Mills</p>
             </div>
           </div>
           <div className="relative h-11 w-40 hidden sm:block">
@@ -184,10 +184,10 @@ export default function CheckoutPage() {
                 <div
                   className={`flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-bold transition-all ${
                     isActive
-                      ? 'bg-[#1d4d2d] text-white shadow-md'
+                      ? 'liquid-glass-btn text-white shadow-md'
                       : isDone
-                      ? 'bg-emerald-600 text-white'
-                      : 'bg-white text-stone-400 border border-stone-200'
+                      ? 'bg-emerald-600/90 text-white shadow-sm'
+                      : 'liquid-glass-pill text-stone-500'
                   }`}
                 >
                   {isDone ? <CheckCircle2 size={14} /> : <span>{stepNum}</span>}
@@ -202,7 +202,7 @@ export default function CheckoutPage() {
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 items-start">
           {/* Main Form (3 Cols) */}
           <div className="lg:col-span-3">
-            <div className="bg-white rounded-3xl shadow-sm border border-stone-200 p-6 sm:p-8">
+            <div className="liquid-glass rounded-3xl shadow-xl p-6 sm:p-8 backdrop-blur-2xl">
               {/* Step 1: Delivery Information */}
               {step === 1 && (
                 <div>
@@ -317,7 +317,7 @@ export default function CheckoutPage() {
                       }
                       setStep(2);
                     }}
-                    className="w-full py-4 bg-[#1d4d2d] hover:bg-[#183e27] text-white font-bold text-sm rounded-xl shadow-lg mt-8 transition-all flex items-center justify-center gap-2"
+                    className="w-full py-4 liquid-glass-btn text-white font-bold text-sm rounded-xl shadow-lg mt-8 transition-all flex items-center justify-center gap-2"
                   >
                     <span>Continue to Payment</span>
                     <ChevronRight size={18} />
@@ -340,10 +340,10 @@ export default function CheckoutPage() {
                     ].map(({ id, label, icon, desc }) => (
                       <label
                         key={id}
-                        className={`flex items-center gap-4 p-4 rounded-2xl border-2 cursor-pointer transition-all ${
+                        className={`flex items-center gap-4 p-4 rounded-2xl border cursor-pointer transition-all ${
                           form.paymentMethod === id
-                            ? 'border-[#1d4d2d] bg-[#edf5ee]/70 shadow-sm'
-                            : 'border-stone-200 hover:border-stone-300 bg-white'
+                            ? 'border-[#1d4d2d] bg-[#edf5ee]/80 shadow-md ring-2 ring-[#1d4d2d]/20 backdrop-blur-md'
+                            : 'border-white/80 bg-white/60 hover:bg-white/80 shadow-sm'
                         }`}
                       >
                         <input
@@ -363,7 +363,7 @@ export default function CheckoutPage() {
                   </div>
 
                   {form.paymentMethod === 'upi' && (
-                    <div className="p-4 bg-stone-50 rounded-2xl border border-stone-200 mb-6">
+                    <div className="p-4 bg-white/60 backdrop-blur-md rounded-2xl border border-white/80 mb-6 shadow-inner">
                       <label className="text-[11px] font-bold text-stone-600 uppercase tracking-wider block mb-1.5">
                         Enter UPI ID / VPA
                       </label>
@@ -377,7 +377,7 @@ export default function CheckoutPage() {
                   )}
 
                   {form.paymentMethod === 'card' && (
-                    <div className="p-4 bg-stone-50 rounded-2xl border border-stone-200 mb-6 space-y-4">
+                    <div className="p-4 bg-white/60 backdrop-blur-md rounded-2xl border border-white/80 mb-6 space-y-4 shadow-inner">
                       <div>
                         <label className="text-[11px] font-bold text-stone-600 uppercase tracking-wider block mb-1.5">
                           Card Number
@@ -423,14 +423,14 @@ export default function CheckoutPage() {
                   <div className="flex gap-3">
                     <button
                       onClick={() => setStep(1)}
-                      className="px-5 py-3.5 border border-stone-300 hover:bg-stone-100 text-stone-700 font-bold text-xs rounded-xl transition-all"
+                      className="px-5 py-3.5 liquid-glass-pill hover:bg-white text-stone-700 font-bold text-xs rounded-xl transition-all shadow-sm"
                     >
                       Back
                     </button>
                     <button
                       onClick={handlePlaceOrder}
                       disabled={isProcessing}
-                      className="flex-1 py-3.5 bg-[#1d4d2d] hover:bg-[#183e27] text-white font-black text-sm rounded-xl shadow-lg transition-all flex items-center justify-center gap-2 cursor-pointer disabled:opacity-75"
+                      className="flex-1 py-3.5 liquid-glass-btn text-white font-black text-sm rounded-xl shadow-xl transition-all flex items-center justify-center gap-2 cursor-pointer disabled:opacity-75"
                     >
                       {isProcessing ? (
                         <span>Processing Payment &amp; Generating AWB...</span>
@@ -449,13 +449,13 @@ export default function CheckoutPage() {
 
           {/* Order Summary (2 Cols) */}
           <div className="lg:col-span-2">
-            <div className="bg-white rounded-3xl shadow-sm border border-stone-200 p-6 sticky top-28 space-y-4">
+            <div className="liquid-glass rounded-3xl shadow-xl p-6 sticky top-28 space-y-4 backdrop-blur-2xl">
               <h2 className="font-black text-stone-900 text-base">Order Review ({items.length} items)</h2>
 
-              <ul className="space-y-3 max-h-64 overflow-y-auto pr-1 divide-y divide-stone-100">
+              <ul className="space-y-3 max-h-64 overflow-y-auto pr-1 divide-y divide-white/60">
                 {items.map((item) => (
                   <li key={`${item.product.id}_${item.selectedSize}`} className="pt-2 flex items-center gap-3">
-                    <div className="relative w-12 h-14 rounded-xl overflow-hidden bg-stone-100 shrink-0 border border-stone-200">
+                    <div className="relative w-12 h-14 rounded-xl overflow-hidden bg-white/80 shrink-0 border border-white/80 shadow-sm">
                       <Image
                         src={item.product.images[0]}
                         alt={item.product.name}
@@ -466,7 +466,7 @@ export default function CheckoutPage() {
                     </div>
                     <div className="flex-1 min-w-0">
                       <p className="text-xs font-bold text-stone-800 truncate">{item.product.name}</p>
-                      <p className="text-[11px] text-stone-400">
+                      <p className="text-[11px] text-stone-500 font-medium">
                         {item.selectedSize} • Qty {item.quantity}
                       </p>
                     </div>
@@ -477,7 +477,7 @@ export default function CheckoutPage() {
                 ))}
               </ul>
 
-              <div className="border-t border-stone-200 pt-3 space-y-2 text-xs">
+              <div className="border-t border-stone-200/60 pt-3 space-y-2 text-xs">
                 <div className="flex justify-between text-stone-600">
                   <span>Subtotal</span>
                   <span className="font-bold text-stone-900">{formatPrice(totalPrice)}</span>
@@ -488,13 +488,13 @@ export default function CheckoutPage() {
                     {shipping === 0 ? 'FREE' : formatPrice(shipping)}
                   </span>
                 </div>
-                <div className="flex justify-between text-base font-black text-stone-950 pt-2 border-t border-stone-200">
+                <div className="flex justify-between text-base font-black text-stone-950 pt-2 border-t border-stone-200/60">
                   <span>Grand Total</span>
                   <span className="text-[#1d4d2d]">{formatPrice(grandTotal)}</span>
                 </div>
               </div>
 
-              <div className="p-3 bg-stone-50 rounded-2xl border border-stone-200 text-[11px] text-stone-500 flex items-center gap-2">
+              <div className="p-3 bg-[#edf5ee]/70 backdrop-blur-md rounded-2xl border border-white/80 text-[11px] text-stone-700 font-medium flex items-center gap-2 shadow-sm">
                 <ShieldCheck size={16} className="text-[#1d4d2d] shrink-0" />
                 <span>100% Genuine Handloom Guarantee &amp; Purity Tag Included</span>
               </div>

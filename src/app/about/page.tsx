@@ -33,11 +33,11 @@ export default function AboutPage() {
           </p>
         </div>
 
-        {/* Founder & Milestone cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center mb-20 bg-white rounded-3xl p-8 sm:p-12 border border-stone-200 shadow-sm">
-          <div className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-stone-900">
+        {/* Founder & Milestone cards (LIQUID GLASS) */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center mb-20 liquid-glass rounded-3xl p-8 sm:p-12 border border-white/80 shadow-xl">
+          <div className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-stone-900 shadow-md border border-white/40">
             <Image
-              src="https://images.unsplash.com/photo-1576995853123-5a10305d93c0?auto=format&fit=crop&w=1000&q=80"
+              src="https://cdn.shopify.com/s/files/1/0094/0716/8559/files/03_b28406bf-5b67-4ff9-811b-2cd04365771a.png?v=1789556947"
               alt="Handloom weaving at Ramraj Cotton"
               fill
               className="object-cover"
@@ -51,7 +51,7 @@ export default function AboutPage() {
           </div>
 
           <div className="space-y-4">
-            <span className="text-xs font-black uppercase tracking-wider text-amber-700 bg-amber-50 px-3 py-1 rounded-full">
+            <span className="text-xs font-black uppercase tracking-wider text-amber-800 bg-amber-100/80 px-3 py-1 rounded-full border border-amber-300/50">
               Padma Shri Honoree
             </span>
             <h2 className="text-2xl sm:text-3xl font-black text-stone-900">The Story of Padma Shri K.R. Nagarajan</h2>
@@ -62,12 +62,12 @@ export default function AboutPage() {
               Today, Ramraj Cotton supports more than <strong>50,000 weaver families</strong> across Tirupur, Erode, Salem, and Coimbatore, providing dignified livelihood and sustaining century-old weaving traditions.
             </p>
             <div className="pt-2 flex items-center gap-2 text-xs font-bold text-[#1d4d2d]">
-              <ShieldCheck size={16} /> Certified 100% Pure Indian Cotton & Handloom Mark
+              <ShieldCheck size={16} /> Certified 100% Pure Indian Cotton &amp; Handloom Mark
             </div>
           </div>
         </div>
 
-        {/* Pillars */}
+        {/* Pillars (LIQUID GLASS) */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
           {[
             {
@@ -91,8 +91,8 @@ export default function AboutPage() {
               desc: 'Solar powered processing mills and zero liquid discharge water recycling in Tirupur.',
             },
           ].map(({ icon: Icon, title, desc }) => (
-            <div key={title} className="bg-white rounded-2xl p-6 border border-stone-200 shadow-sm">
-              <div className="w-12 h-12 rounded-xl bg-[#edf5ee] text-[#1d4d2d] flex items-center justify-center mb-4">
+            <div key={title} className="liquid-glass-card rounded-2xl p-6 border border-white/70 shadow-sm hover:shadow-lg">
+              <div className="w-12 h-12 rounded-xl bg-[#edf5ee] text-[#1d4d2d] flex items-center justify-center mb-4 shadow-sm border border-emerald-400/20">
                 <Icon size={22} />
               </div>
               <h3 className="font-bold text-base text-stone-900 mb-1">{title}</h3>

@@ -42,30 +42,30 @@ export default function SearchModal({ isOpen, onClose }: SearchModalProps) {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-start justify-center pt-16 sm:pt-24 p-4 bg-black/60 backdrop-blur-sm animate-fadeIn">
-      <div className="bg-white rounded-3xl max-w-2xl w-full max-h-[80vh] overflow-hidden shadow-2xl flex flex-col">
+    <div className="fixed inset-0 z-50 flex items-start justify-center pt-16 sm:pt-24 p-4 bg-black/60 backdrop-blur-md animate-fadeIn">
+      <div className="liquid-glass rounded-3xl max-w-2xl w-full max-h-[80vh] overflow-hidden shadow-2xl flex flex-col border border-white/80">
         {/* Search Input Bar */}
-        <div className="p-4 sm:p-5 border-b border-stone-200 flex items-center gap-3">
-          <Search size={22} className="text-stone-400 shrink-0" />
+        <div className="p-4 sm:p-5 border-b border-white/40 flex items-center gap-3 bg-white/60 backdrop-blur-md">
+          <Search size={22} className="text-stone-500 shrink-0" />
           <input
             type="text"
             autoFocus
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             placeholder="Search Ramraj dhotis, shirts, Ramyyam sarees, kurtis..."
-            className="flex-1 text-base sm:text-lg font-medium text-stone-900 placeholder:text-stone-400 focus:outline-none"
+            className="flex-1 text-base sm:text-lg font-medium text-stone-900 placeholder:text-stone-400 focus:outline-none bg-transparent"
           />
           {query && (
             <button
               onClick={() => setQuery('')}
-              className="text-stone-400 hover:text-stone-600 p-1"
+              className="text-stone-400 hover:text-stone-600 p-1 cursor-pointer"
             >
               <X size={18} />
             </button>
           )}
           <button
             onClick={onClose}
-            className="text-xs font-bold text-stone-500 hover:text-stone-900 px-3 py-1.5 bg-stone-100 rounded-lg"
+            className="liquid-glass-pill text-xs font-bold text-stone-600 hover:text-stone-900 px-3 py-1.5 rounded-lg cursor-pointer"
           >
             ESC
           </button>

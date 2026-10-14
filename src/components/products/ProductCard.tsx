@@ -42,7 +42,7 @@ export default function ProductCard({ product }: ProductCardProps) {
 
   return (
     <div
-      className="group bg-white rounded-3xl overflow-hidden border border-stone-200/90 hover:border-amber-400 hover:shadow-xl transition-all duration-300 flex flex-col justify-between"
+      className="group liquid-glass-card rounded-3xl overflow-hidden flex flex-col justify-between relative border border-white/70"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
@@ -63,10 +63,10 @@ export default function ProductCard({ product }: ProductCardProps) {
           <div className="absolute top-3 left-3 flex flex-col gap-1.5 items-start pointer-events-none">
             {/* Brand Pill */}
             <span
-              className={`text-[9px] font-black tracking-wider uppercase px-2 py-0.5 rounded-full shadow-sm ${
+              className={`text-[9px] font-black tracking-wider uppercase px-2.5 py-0.5 rounded-full shadow-sm backdrop-blur-md border ${
                 product.brand === 'ramraj'
-                  ? 'bg-[#1d4d2d] text-white'
-                  : 'bg-rose-900 text-rose-100'
+                  ? 'bg-[#1d4d2d]/90 text-white border-emerald-400/30'
+                  : 'bg-rose-950/90 text-rose-100 border-rose-400/30'
               }`}
             >
               {product.brand === 'ramraj' ? 'Ramraj Cotton' : 'Ramyyam'}
@@ -74,14 +74,14 @@ export default function ProductCard({ product }: ProductCardProps) {
 
             {/* Discount Badge */}
             {product.discount && product.discount > 0 && (
-              <span className="text-[10px] font-black bg-amber-500 text-stone-950 px-2 py-0.5 rounded-full shadow-sm">
+              <span className="text-[10px] font-black bg-amber-400/95 backdrop-blur-md text-stone-950 px-2 py-0.5 rounded-full shadow-sm border border-amber-300">
                 {product.discount}% OFF
               </span>
             )}
 
             {/* Special Feature / Innovation Pill */}
             {product.specialFeature && (
-              <span className="hidden sm:inline text-[9px] font-bold bg-white/95 text-stone-900 px-2 py-0.5 rounded-full shadow-sm border border-stone-200 backdrop-blur-sm">
+              <span className="hidden sm:inline text-[9px] font-bold liquid-glass-pill text-stone-900 px-2.5 py-0.5 rounded-full">
                 ★ {product.specialFeature.split(' ')[0]}
               </span>
             )}
@@ -91,7 +91,7 @@ export default function ProductCard({ product }: ProductCardProps) {
           <button
             onClick={handleToggleFav}
             aria-label="Save to Wishlist"
-            className="absolute top-3 right-3 w-8 h-8 rounded-full bg-white/90 hover:bg-white text-stone-600 hover:text-rose-600 shadow-md flex items-center justify-center transition-all duration-200 cursor-pointer active:scale-90"
+            className="liquid-glass-pill absolute top-3 right-3 w-8 h-8 rounded-full text-stone-600 hover:text-rose-600 shadow-md flex items-center justify-center transition-all duration-200 cursor-pointer active:scale-90"
           >
             <Heart
               size={16}
@@ -103,10 +103,8 @@ export default function ProductCard({ product }: ProductCardProps) {
           <div className="absolute inset-x-3 bottom-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
             <button
               onClick={handleQuickAdd}
-              className={`w-full py-2.5 rounded-xl font-bold text-xs flex items-center justify-center gap-2 shadow-lg transition-transform active:scale-95 cursor-pointer ${
-                product.brand === 'ramraj'
-                  ? 'bg-[#1d4d2d] hover:bg-[#183e27] text-white'
-                  : 'bg-rose-900 hover:bg-rose-950 text-white'
+              className={`w-full py-2.5 rounded-xl font-bold text-xs flex items-center justify-center gap-2 shadow-lg transition-transform active:scale-95 cursor-pointer backdrop-blur-md ${
+                product.brand === 'ramraj' ? 'liquid-glass-btn' : 'liquid-glass-btn-rose'
               }`}
             >
               <ShoppingBag size={14} />

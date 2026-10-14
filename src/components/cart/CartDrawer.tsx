@@ -43,18 +43,18 @@ export default function CartDrawer() {
         />
       )}
 
-      {/* Drawer */}
+      {/* Drawer (LIQUID GLASS) */}
       <aside
         id="cart-drawer"
         role="dialog"
         aria-modal="true"
         aria-label="Shopping cart"
-        className={`fixed top-0 right-0 z-50 h-full w-full sm:w-[440px] bg-white shadow-2xl flex flex-col transition-transform duration-300 ease-out ${
+        className={`fixed top-0 right-0 z-50 h-full w-full sm:w-[440px] liquid-glass shadow-2xl flex flex-col transition-transform duration-300 ease-out border-l border-white/60 ${
           isOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
       >
         {/* Header */}
-        <div className="flex items-center justify-between px-6 py-5 border-b border-stone-200 bg-[#1d4d2d] text-white">
+        <div className="flex items-center justify-between px-6 py-5 border-b border-white/20 bg-[#1d4d2d]/90 backdrop-blur-md text-white">
           <div className="flex items-center gap-3">
             <ShoppingBag className="text-amber-400" size={22} />
             <h2 className="font-black text-lg tracking-wide">Your Shopping Bag</h2>
@@ -223,7 +223,7 @@ export default function CartDrawer() {
 
         {/* Footer summary */}
         {items.length > 0 && (
-          <div className="border-t border-stone-200 p-6 space-y-4 bg-stone-50">
+          <div className="border-t border-white/60 p-6 space-y-4 liquid-glass">
             <div className="space-y-2 text-xs">
               <div className="flex justify-between text-stone-600">
                 <span>Subtotal ({totalItems} items)</span>
@@ -247,7 +247,7 @@ export default function CartDrawer() {
               <Link
                 href="/checkout"
                 onClick={closeCart}
-                className="w-full py-3.5 bg-[#1d4d2d] hover:bg-[#183e27] text-white font-bold text-sm rounded-xl shadow-lg transition-all flex items-center justify-center gap-2"
+                className="w-full py-3.5 liquid-glass-btn text-white font-bold text-sm rounded-xl shadow-lg transition-all flex items-center justify-center gap-2 active:scale-95"
               >
                 <span>Proceed to Checkout</span>
                 <ArrowRight size={16} />
@@ -255,7 +255,7 @@ export default function CartDrawer() {
               <Link
                 href="/cart"
                 onClick={closeCart}
-                className="w-full py-2.5 bg-white border border-stone-300 hover:bg-stone-100 text-stone-800 font-bold text-xs rounded-xl transition-all flex items-center justify-center"
+                className="w-full py-2.5 liquid-glass-pill text-stone-800 font-bold text-xs rounded-xl transition-all flex items-center justify-center shadow-sm"
               >
                 View Full Cart &amp; Apply Coupons
               </Link>

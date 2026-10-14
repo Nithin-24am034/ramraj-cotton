@@ -130,12 +130,12 @@ export default function DrapeGuideModal({ isOpen, onClose, initialTab = 'velcro'
   const current = guides[activeTab];
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm animate-fadeIn">
-      <div className="bg-white rounded-3xl max-w-2xl w-full max-h-[90vh] overflow-hidden shadow-2xl flex flex-col">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-md animate-fadeIn">
+      <div className="liquid-glass rounded-3xl max-w-2xl w-full max-h-[90vh] overflow-hidden shadow-2xl flex flex-col border border-white/80">
         {/* Header */}
-        <div className="p-6 bg-gradient-to-r from-amber-700 via-amber-600 to-amber-700 text-white flex items-center justify-between">
+        <div className="p-6 bg-gradient-to-r from-amber-700 via-amber-600 to-amber-700 text-white flex items-center justify-between shadow-sm">
           <div className="flex items-center gap-2.5">
-            <div className="w-9 h-9 rounded-full bg-white/20 flex items-center justify-center">
+            <div className="w-9 h-9 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center">
               <Sparkles size={18} className="text-amber-200" />
             </div>
             <div>

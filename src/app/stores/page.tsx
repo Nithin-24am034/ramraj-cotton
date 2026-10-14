@@ -186,16 +186,16 @@ export default function StoreLocatorPage() {
   });
 
   return (
-    <div className="min-h-screen bg-stone-50 py-10">
+    <div className="min-h-screen py-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Banner */}
-        <div className="bg-gradient-to-r from-[#1d4d2d] via-[#245e37] to-[#1d4d2d] rounded-3xl p-8 md:p-12 text-white mb-10 shadow-lg relative overflow-hidden">
+        <div className="liquid-glass-dark rounded-3xl p-8 md:p-12 text-white mb-10 shadow-2xl relative overflow-hidden border border-white/20">
           <div className="relative z-10 max-w-2xl">
-            <span className="text-xs font-black tracking-[0.2em] uppercase text-amber-300 bg-white/10 px-3 py-1 rounded-full">
+            <span className="text-xs font-black tracking-[0.2em] uppercase text-amber-300 bg-white/10 px-3.5 py-1.5 rounded-full backdrop-blur-md border border-white/20 inline-block mb-3">
               250+ Showrooms Across India
             </span>
-            <h1 className="text-3xl md:text-5xl font-black mt-4 mb-3">Find a Ramraj & Ramyyam Showroom</h1>
-            <p className="text-sm md:text-base text-stone-200 leading-relaxed">
+            <h1 className="text-3xl md:text-5xl font-black mt-2 mb-3">Find a Ramraj &amp; Ramyyam Showroom</h1>
+            <p className="text-sm md:text-base text-stone-200 leading-relaxed font-light">
               Experience the pure touch of authentic South Indian handlooms in person. Visit our state-of-the-art showrooms for custom fitting, bridal consultations, and our complete collections.
             </p>
           </div>
@@ -203,7 +203,7 @@ export default function StoreLocatorPage() {
         </div>
 
         {/* Filter Controls */}
-        <div className="bg-white rounded-2xl p-4 sm:p-6 shadow-sm border border-stone-200 mb-8 space-y-4">
+        <div className="liquid-glass rounded-3xl p-4 sm:p-6 shadow-xl mb-8 space-y-4 backdrop-blur-2xl">
           <div className="flex flex-col sm:flex-row gap-4 items-center justify-between">
             {/* Search Input */}
             <div className="relative w-full sm:w-96">
@@ -213,12 +213,12 @@ export default function StoreLocatorPage() {
                 placeholder="Search by area, landmark or street..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-stone-300 text-sm focus:outline-none focus:border-[#1d4d2d]"
+                className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-white/80 text-sm focus:outline-none focus:border-[#1d4d2d] bg-white/80 backdrop-blur-md shadow-inner"
               />
             </div>
 
             {/* Brand Toggle */}
-            <div className="flex gap-1.5 p-1 bg-stone-100 rounded-xl w-full sm:w-auto">
+            <div className="flex gap-1.5 p-1.5 bg-white/60 backdrop-blur-md rounded-2xl border border-white/80 w-full sm:w-auto shadow-inner">
               {[
                 { id: 'all', label: 'All Showrooms' },
                 { id: 'ramraj', label: 'Ramraj Cotton' },
@@ -227,9 +227,9 @@ export default function StoreLocatorPage() {
                 <button
                   key={tab.id}
                   onClick={() => setBrandFilter(tab.id as typeof brandFilter)}
-                  className={`flex-1 sm:flex-initial px-4 py-1.5 rounded-lg text-xs font-bold transition-all ${
+                  className={`flex-1 sm:flex-initial px-4 py-1.5 rounded-xl text-xs font-bold transition-all ${
                     brandFilter === tab.id
-                      ? 'bg-white text-stone-900 shadow-sm'
+                      ? 'liquid-glass-btn text-white shadow-sm'
                       : 'text-stone-600 hover:text-stone-900'
                   }`}
                 >
@@ -240,15 +240,15 @@ export default function StoreLocatorPage() {
           </div>
 
           {/* City chips */}
-          <div className="flex gap-2 overflow-x-auto pb-1 pt-2">
+          <div className="flex gap-2 overflow-x-auto pb-1 pt-2 scrollbar-none">
             {cities.map((city) => (
               <button
                 key={city}
                 onClick={() => setSelectedCity(city)}
                 className={`px-3.5 py-1.5 rounded-xl text-xs font-bold whitespace-nowrap transition-all ${
                   selectedCity === city
-                    ? 'bg-[#1d4d2d] text-white shadow-sm'
-                    : 'bg-stone-100 text-stone-600 hover:bg-stone-200'
+                    ? 'liquid-glass-btn text-white shadow-sm'
+                    : 'liquid-glass-pill text-stone-600 hover:text-stone-900'
                 }`}
               >
                 {city}
@@ -262,21 +262,21 @@ export default function StoreLocatorPage() {
           {filtered.map((store) => (
             <div
               key={store.id}
-              className="bg-white rounded-2xl p-6 shadow-sm border border-stone-200 hover:border-amber-400 hover:shadow-md transition-all flex flex-col justify-between"
+              className="liquid-glass-card rounded-3xl p-6 shadow-lg flex flex-col justify-between hover:shadow-2xl transition-all"
             >
               <div>
                 <div className="flex items-center justify-between gap-2 mb-3">
-                  <span className={`text-[10px] font-black uppercase px-2 py-0.5 rounded-full ${
+                  <span className={`text-[10px] font-black uppercase px-2.5 py-1 rounded-full backdrop-blur-md border ${
                     store.brand === 'ramyyam'
-                      ? 'bg-rose-100 text-rose-800'
+                      ? 'bg-rose-100/80 text-rose-800 border-rose-200'
                       : store.brand === 'ramraj'
-                      ? 'bg-[#edf5ee] text-[#1d4d2d]'
-                      : 'bg-amber-100 text-amber-900'
+                      ? 'bg-[#edf5ee]/80 text-[#1d4d2d] border-emerald-200'
+                      : 'bg-amber-100/80 text-amber-900 border-amber-200'
                   }`}>
                     {store.brand === 'both' ? 'Ramraj & Ramyyam' : store.brand === 'ramraj' ? 'Ramraj Cotton' : 'Ramyyam Exclusive'}
                   </span>
                   {store.isFlagship && (
-                    <span className="text-[10px] font-bold text-amber-700 bg-amber-50 px-2 py-0.5 rounded-full border border-amber-200">
+                    <span className="text-[10px] font-bold text-amber-700 bg-amber-50/80 backdrop-blur-md px-2.5 py-1 rounded-full border border-amber-200 shadow-sm">
                       ★ Flagship
                     </span>
                   )}
@@ -302,8 +302,8 @@ export default function StoreLocatorPage() {
                 </div>
               </div>
 
-              <div className="pt-4 border-t border-stone-100 flex items-center justify-between">
-                <span className="text-[11px] text-stone-500 flex items-center gap-1">
+              <div className="pt-4 border-t border-white/60 flex items-center justify-between">
+                <span className="text-[11px] text-stone-500 flex items-center gap-1 font-medium">
                   {store.hasParking ? <CheckCircle2 size={13} className="text-emerald-600" /> : null}
                   {store.hasParking ? 'Customer Parking Available' : 'Valet on Request'}
                 </span>
@@ -311,7 +311,7 @@ export default function StoreLocatorPage() {
                   href={`https://maps.google.com/?q=${encodeURIComponent(store.name + ' ' + store.address)}`}
                   target="_blank"
                   rel="noreferrer"
-                  className="flex items-center gap-1.5 px-3 py-1.5 bg-stone-100 hover:bg-[#1d4d2d] hover:text-white text-stone-700 text-xs font-bold rounded-lg transition-colors"
+                  className="flex items-center gap-1.5 px-3 py-1.5 liquid-glass-pill hover:bg-[#1d4d2d] hover:text-white text-stone-700 text-xs font-bold rounded-xl transition-all shadow-sm"
                 >
                   <Navigation size={13} /> Directions
                 </a>
@@ -321,8 +321,8 @@ export default function StoreLocatorPage() {
         </div>
 
         {filtered.length === 0 && (
-          <div className="text-center py-16 bg-white rounded-3xl border border-stone-200">
-            <Building2 size={40} className="mx-auto text-stone-300 mb-3" />
+          <div className="text-center py-16 liquid-glass rounded-3xl shadow-xl">
+            <Building2 size={40} className="mx-auto text-stone-400 mb-3" />
             <h3 className="font-bold text-stone-700 text-base">No showrooms found in this search</h3>
             <p className="text-xs text-stone-400 mt-1">Try selecting a different city or clearing the search filter.</p>
           </div>

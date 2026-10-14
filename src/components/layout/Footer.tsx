@@ -58,7 +58,7 @@ export default function Footer() {
           {/* Brand Col 1 */}
           <div className="lg:col-span-2">
             <div className="flex flex-wrap items-center gap-4 mb-5">
-              <div className="relative h-14 w-44 bg-white p-2 rounded-2xl shadow-sm border border-stone-800">
+              <div className="relative h-14 w-44 bg-white/95 backdrop-blur-md p-2 rounded-2xl shadow-md border border-white/20">
                 <Image
                   src="/images/ramraj-logo.jpg"
                   alt="Ramraj Cotton Original Logo"
@@ -67,7 +67,7 @@ export default function Footer() {
                   sizes="180px"
                 />
               </div>
-              <div className="relative h-12 w-32 bg-white p-1.5 rounded-2xl shadow-sm border border-stone-800">
+              <div className="relative h-12 w-32 bg-white/95 backdrop-blur-md p-1.5 rounded-2xl shadow-md border border-white/20">
                 <Image
                   src="/images/ramyyam-logo.jpg"
                   alt="Ramyyam Original Logo"
@@ -80,10 +80,10 @@ export default function Footer() {
             <p className="text-xs leading-relaxed text-stone-400 mb-5 max-w-sm">
               Founded in 1983 by Padma Shri K.R. Nagarajan in Avinashi, Tirupur. Today, Ramraj Cotton &amp; Ramyyam sustain over 50,000 handloom weaver families, bringing pure combed cotton dhotis, shirts, and royal silk sarees to homes across the globe.
             </p>
-            <div className="p-3 bg-stone-900 rounded-2xl border border-stone-800 text-xs text-stone-400 space-y-1">
+            <div className="p-4 bg-white/5 backdrop-blur-md rounded-2xl border border-white/10 text-xs text-stone-400 space-y-1 shadow-inner">
               <p className="text-white font-bold">Toll-Free Customer Care:</p>
               <p className="text-amber-400 font-bold text-sm">1800 425 2444 / +91 94899 00000</p>
-              <p className="text-[11px] text-stone-500">Mon to Sat • 9:00 AM to 8:00 PM IST</p>
+              <p className="text-[11px] text-stone-400">Mon to Sat • 9:00 AM to 8:00 PM IST</p>
             </div>
           </div>
 

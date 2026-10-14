@@ -139,9 +139,9 @@ export default function ProductDetailClient({
     ));
 
   return (
-    <div className="min-h-screen bg-stone-50 pb-16">
-      {/* Breadcrumb Navigation */}
-      <div className="bg-white border-b border-stone-200">
+    <div className="min-h-screen pb-16 relative">
+      {/* Breadcrumb Navigation (LIQUID GLASS) */}
+      <div className="liquid-glass border-b border-white/60">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3.5">
           <nav className="flex items-center gap-2 text-xs text-stone-500" aria-label="Breadcrumb">
             <Link href="/" className="hover:text-[#1d4d2d] transition-colors">Home</Link>
@@ -170,9 +170,9 @@ export default function ProductDetailClient({
       {/* Main Product Container */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 xl:gap-14">
-          {/* Left Column: Image Gallery */}
+          {/* Left Column: Image Gallery (LIQUID GLASS) */}
           <div className="space-y-4">
-            <div className="relative aspect-[4/5] rounded-3xl overflow-hidden bg-white shadow-md border border-stone-200 group">
+            <div className="relative aspect-[4/5] rounded-3xl overflow-hidden liquid-glass-card shadow-2xl border border-white/80 group">
               <Image
                 src={product.images[selectedImage] || product.images[0]}
                 alt={`${product.name} - image ${selectedImage + 1}`}
@@ -276,8 +276,8 @@ export default function ProductDetailClient({
               </div>
             </div>
 
-            {/* Price Box */}
-            <div className="p-4 bg-white rounded-2xl border border-stone-200 flex items-baseline gap-4 shadow-sm">
+            {/* Price Box (LIQUID GLASS) */}
+            <div className="p-4 liquid-glass rounded-2xl border border-white/80 flex items-baseline gap-4 shadow-sm">
               <span className="text-3xl font-black text-stone-950">
                 {formatPrice(product.price)}
               </span>
@@ -286,7 +286,7 @@ export default function ProductDetailClient({
                   <span className="text-base text-stone-400 line-through">
                     {formatPrice(product.originalPrice)}
                   </span>
-                  <span className="text-xs font-black text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-md border border-emerald-200">
+                  <span className="text-xs font-black text-emerald-800 bg-emerald-100/80 px-2 py-0.5 rounded-md border border-emerald-300">
                     Save {formatPrice(product.originalPrice - product.price)} ({product.discount}%)
                   </span>
                 </>
@@ -315,7 +315,7 @@ export default function ProductDetailClient({
                     className={`px-4 py-2.5 rounded-xl text-xs font-bold transition-all cursor-pointer ${
                       selectedSize === s
                         ? 'bg-[#1d4d2d] text-white shadow-md'
-                        : 'bg-white border border-stone-300 text-stone-700 hover:border-[#1d4d2d]'
+                        : 'liquid-glass-pill text-stone-700 hover:border-[#1d4d2d]'
                     }`}
                   >
                     {s}
@@ -338,7 +338,7 @@ export default function ProductDetailClient({
                       className={`flex items-center gap-2 px-3 py-1.5 rounded-xl border text-xs font-bold transition-all cursor-pointer ${
                         selectedColor.name === c.name
                           ? 'border-[#1d4d2d] ring-2 ring-[#a9d3ae] bg-stone-50'
-                          : 'border-stone-200 hover:border-stone-400 bg-white'
+                          : 'liquid-glass-pill hover:border-stone-400'
                       }`}
                     >
                       <span className="w-4 h-4 rounded-full border border-stone-300" style={{ backgroundColor: c.hex }} />
@@ -352,7 +352,7 @@ export default function ProductDetailClient({
             {/* Quantity Controls & Purchase Buttons */}
             <div className="space-y-3 pt-2">
               <div className="flex items-center gap-3">
-                <div className="flex items-center border border-stone-300 bg-white rounded-xl overflow-hidden shadow-sm">
+                <div className="flex items-center liquid-glass rounded-xl overflow-hidden shadow-sm border border-white/80">
                   <button
                     onClick={() => setQuantity((q) => Math.max(1, q - 1))}
                     className="p-3 text-stone-500 hover:text-stone-900 transition-colors cursor-pointer"
@@ -373,7 +373,7 @@ export default function ProductDetailClient({
                 {/* Add to Cart */}
                 <button
                   onClick={handleAddToCart}
-                  className="flex-1 py-3.5 bg-stone-900 hover:bg-stone-800 text-white font-bold text-sm rounded-xl shadow-md transition-all active:scale-95 flex items-center justify-center gap-2 cursor-pointer"
+                  className="flex-1 py-3.5 liquid-glass-btn text-white font-bold text-sm rounded-xl shadow-md transition-all active:scale-95 flex items-center justify-center gap-2 cursor-pointer"
                 >
                   <ShoppingCart size={18} />
                   <span>Add to Cart</span>
@@ -385,8 +385,8 @@ export default function ProductDetailClient({
                 onClick={handleBuyNow}
                 className={`w-full py-3.5 rounded-xl font-black text-sm text-white shadow-lg transition-all active:scale-95 flex items-center justify-center gap-2 cursor-pointer ${
                   product.brand === 'ramraj'
-                    ? 'bg-[#1d4d2d] hover:bg-[#183e27]'
-                    : 'bg-rose-900 hover:bg-rose-950'
+                    ? 'liquid-glass-btn'
+                    : 'liquid-glass-btn-rose'
                 }`}
               >
                 <span>Buy Now – 1-Click Instant Checkout</span>
@@ -394,8 +394,8 @@ export default function ProductDetailClient({
               </button>
             </div>
 
-            {/* ── INLINE PINCODE ESTIMATOR BOX ── */}
-            <div className="p-4 bg-white rounded-2xl border border-stone-200 shadow-sm space-y-3">
+            {/* ── INLINE PINCODE ESTIMATOR BOX (LIQUID GLASS) ── */}
+            <div className="p-4 liquid-glass rounded-2xl border border-white/80 shadow-sm space-y-3">
               <div className="flex items-center gap-2">
                 <MapPin size={16} className="text-[#1d4d2d]" />
                 <span className="text-xs font-bold text-stone-800">Check Delivery &amp; COD Availability</span>
@@ -408,18 +408,18 @@ export default function ProductDetailClient({
                   onChange={(e) => setPincodeInput(e.target.value.replace(/\D/g, ''))}
                   onKeyDown={(e) => e.key === 'Enter' && handleCheckPincode()}
                   placeholder="Enter 6-digit Pincode (e.g. 600001)"
-                  className="flex-1 px-3 py-2 border border-stone-300 rounded-xl text-xs font-mono font-bold focus:outline-none focus:border-[#1d4d2d]"
+                  className="flex-1 px-3 py-2 border border-stone-300 rounded-xl text-xs font-mono font-bold focus:outline-none focus:border-[#1d4d2d] bg-white/80 backdrop-blur-sm"
                 />
                 <button
                   onClick={handleCheckPincode}
-                  className="px-4 py-2 bg-stone-900 hover:bg-stone-800 text-white font-bold text-xs rounded-xl"
+                  className="px-4 py-2 liquid-glass-btn text-white font-bold text-xs rounded-xl cursor-pointer"
                 >
                   Verify
                 </button>
               </div>
 
               {pincodeResult && (
-                <div className="p-3 bg-[#edf5ee] rounded-xl text-xs space-y-1">
+                <div className="p-3 bg-[#edf5ee]/90 rounded-xl text-xs space-y-1 border border-emerald-400/30">
                   <p className="font-bold text-[#1d4d2d] flex items-center gap-1.5">
                     <CheckCircle2 size={14} />
                     <span>Delivering to {pincodeResult.city} ({pincodeResult.pincode})</span>
@@ -434,17 +434,17 @@ export default function ProductDetailClient({
 
             {/* Trust highlights */}
             <div className="grid grid-cols-3 gap-3 pt-2 text-center">
-              <div className="p-3 bg-white rounded-xl border border-stone-200">
+              <div className="p-3 liquid-glass rounded-xl border border-white/70 shadow-sm">
                 <ShieldCheck size={20} className="mx-auto text-[#1d4d2d] mb-1" />
                 <p className="text-[11px] font-bold text-stone-800">100% Genuine</p>
                 <p className="text-[10px] text-stone-400">Tirupur Mill Sealed</p>
               </div>
-              <div className="p-3 bg-white rounded-xl border border-stone-200">
+              <div className="p-3 liquid-glass rounded-xl border border-white/70 shadow-sm">
                 <Truck size={20} className="mx-auto text-amber-600 mb-1" />
                 <p className="text-[11px] font-bold text-stone-800">Fast Dispatch</p>
                 <p className="text-[10px] text-stone-400">Within 24 Hours</p>
               </div>
-              <div className="p-3 bg-white rounded-xl border border-stone-200">
+              <div className="p-3 liquid-glass rounded-xl border border-white/70 shadow-sm">
                 <RefreshCcw size={20} className="mx-auto text-emerald-600 mb-1" />
                 <p className="text-[11px] font-bold text-stone-800">Easy Exchange</p>
                 <p className="text-[10px] text-stone-400">At Any Showroom</p>
@@ -453,8 +453,8 @@ export default function ProductDetailClient({
           </div>
         </div>
 
-        {/* ── TABS SECTION: Description, Specifications, Reviews, Care ── */}
-        <div className="mt-16 bg-white rounded-3xl p-6 sm:p-10 border border-stone-200 shadow-sm">
+        {/* ── TABS SECTION: Description, Specifications, Reviews, Care (LIQUID GLASS) ── */}
+        <div className="mt-16 liquid-glass rounded-3xl p-6 sm:p-10 border border-white/80 shadow-xl">
           {/* Tabs bar */}
           <div className="flex border-b border-stone-200 gap-4 sm:gap-8 overflow-x-auto pb-3">
             {[

@@ -198,14 +198,14 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* ── MAIN STICKY NAVIGATION HEADER ── */}
+      {/* ── MAIN STICKY NAVIGATION HEADER (LIQUID GLASS) ── */}
       <header
         className={`sticky top-0 z-40 transition-all duration-300 ${
           isScrolled
-            ? 'bg-white/95 backdrop-blur-md shadow-md border-b border-stone-200'
+            ? 'liquid-glass-nav shadow-[0_8px_32px_rgba(0,0,0,0.08)]'
             : isRamyyam
-            ? 'bg-[#fff8f9] shadow-sm border-b border-rose-100'
-            : 'bg-[#f7faf7] shadow-sm border-b border-stone-200'
+            ? 'bg-rose-50/75 backdrop-blur-2xl border-b border-rose-200/50 shadow-sm'
+            : 'liquid-glass-nav border-b border-white/60 shadow-sm'
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -293,7 +293,7 @@ export default function Navbar() {
                   <ChevronDown size={14} className={`transition-transform ${isMenMenuOpen ? 'rotate-180' : ''}`} />
                 </button>
                 {isMenMenuOpen && (
-                  <div className="absolute top-full left-0 mt-1 w-72 bg-white rounded-2xl shadow-2xl border border-stone-200 py-3 z-50 animate-fadeIn">
+                  <div className="absolute top-full left-0 mt-1.5 w-72 bg-white/90 backdrop-blur-2xl rounded-2xl shadow-2xl border border-white/80 py-3 z-50 animate-fadeIn">
                     <div className="px-4 pb-2 mb-2 border-b border-stone-100">
                       <p className="text-[10px] font-black uppercase tracking-wider text-[#1d4d2d]">
                         Ramraj Cotton Men &amp; Boys
@@ -349,7 +349,7 @@ export default function Navbar() {
                   <ChevronDown size={14} className={`transition-transform ${isWomenMenuOpen ? 'rotate-180' : ''}`} />
                 </button>
                 {isWomenMenuOpen && (
-                  <div className="absolute top-full left-0 mt-1 w-72 bg-white rounded-2xl shadow-2xl border border-rose-200 py-3 z-50 animate-fadeIn">
+                  <div className="absolute top-full left-0 mt-1.5 w-72 bg-white/90 backdrop-blur-2xl rounded-2xl shadow-2xl border border-rose-200/80 py-3 z-50 animate-fadeIn">
                     <div className="px-4 pb-2 mb-2 border-b border-rose-100">
                       <p className="text-[10px] font-black uppercase tracking-wider text-rose-800">
                         Ramyyam Ethnic &amp; Handlooms
@@ -391,25 +391,25 @@ export default function Navbar() {
 
               <Link
                 href="/products?category=dhotis"
-                className="px-3 py-2 text-stone-700 hover:text-[#1d4d2d] font-bold text-sm rounded-lg transition-colors"
+                className="px-3.5 py-2 text-stone-700 hover:text-[#1d4d2d] hover:bg-white/60 font-bold text-sm rounded-xl transition-all"
               >
                 Dhotis
               </Link>
               <Link
                 href="/products?category=sarees"
-                className="px-3 py-2 text-stone-700 hover:text-rose-800 font-bold text-sm rounded-lg transition-colors"
+                className="px-3.5 py-2 text-stone-700 hover:text-rose-800 hover:bg-rose-50/60 font-bold text-sm rounded-xl transition-all"
               >
                 Sarees
               </Link>
               <Link
                 href="/products?category=shirts"
-                className="px-3 py-2 text-stone-700 hover:text-[#1d4d2d] font-bold text-sm rounded-lg transition-colors"
+                className="px-3.5 py-2 text-stone-700 hover:text-[#1d4d2d] hover:bg-white/60 font-bold text-sm rounded-xl transition-all"
               >
                 Shirts
               </Link>
               <Link
                 href="/about"
-                className="px-3 py-2 text-stone-700 hover:text-[#1d4d2d] font-bold text-sm rounded-lg transition-colors"
+                className="px-3.5 py-2 text-stone-700 hover:text-[#1d4d2d] hover:bg-white/60 font-bold text-sm rounded-xl transition-all"
               >
                 Heritage
               </Link>
@@ -420,7 +420,7 @@ export default function Navbar() {
               {/* Search Trigger */}
               <button
                 onClick={() => setIsSearchOpen(true)}
-                className="flex items-center gap-2 px-3 py-2 text-stone-600 hover:text-stone-900 bg-stone-100 hover:bg-stone-200/80 rounded-xl text-xs font-semibold transition-all cursor-pointer"
+                className="liquid-glass-pill flex items-center gap-2 px-3.5 py-2 text-stone-700 hover:text-stone-950 rounded-xl text-xs font-semibold cursor-pointer"
                 aria-label="Search catalog"
               >
                 <Search size={16} />
@@ -440,10 +440,10 @@ export default function Navbar() {
               {/* Wishlist */}
               <button
                 onClick={openWishlist}
-                className="relative p-2.5 text-stone-700 hover:text-rose-600 hover:bg-rose-50 rounded-xl transition-all cursor-pointer"
+                className="liquid-glass-pill relative p-2.5 text-stone-700 hover:text-rose-600 rounded-xl cursor-pointer"
                 aria-label="Wishlist"
               >
-                <Heart size={20} />
+                <Heart size={18} />
                 {totalWishlistItems > 0 && (
                   <span className="absolute -top-1 -right-1 bg-rose-500 text-white text-[10px] font-black w-4.5 h-4.5 rounded-full flex items-center justify-center animate-scaleIn">
                     {totalWishlistItems}
@@ -455,10 +455,8 @@ export default function Navbar() {
               <button
                 id="cart-toggle-btn"
                 onClick={toggleCart}
-                className={`relative flex items-center gap-2.5 px-4 py-2.5 rounded-xl transition-all duration-200 shadow-md active:scale-95 cursor-pointer ${
-                  isRamyyam
-                    ? 'bg-rose-900 hover:bg-rose-950 text-white'
-                    : 'bg-[#1d4d2d] hover:bg-[#183e27] text-white'
+                className={`relative flex items-center gap-2.5 px-4 py-2.5 rounded-xl transition-all duration-300 shadow-md active:scale-95 cursor-pointer ${
+                  isRamyyam ? 'liquid-glass-btn-rose' : 'liquid-glass-btn'
                 }`}
                 aria-label="Open cart"
               >

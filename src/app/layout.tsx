@@ -61,10 +61,16 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" className={inter.variable}>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://images.unsplash.com" />
         <link rel="preconnect" href="https://ramrajcotton.in" />
+        <link rel="preconnect" href="https://cdn.shopify.com" />
       </head>
-      <body className="flex flex-col min-h-screen bg-stone-50 antialiased selection:bg-amber-100 selection:text-stone-900">
+      <body className="flex flex-col min-h-screen bg-[#f8faf7] antialiased selection:bg-amber-100 selection:text-stone-900 relative">
+        {/* Liquid Glass Ambient Refraction Orbs */}
+        <div aria-hidden="true" className="pointer-events-none fixed inset-0 overflow-hidden -z-10">
+          <div className="liquid-orb-1" />
+          <div className="liquid-orb-2" />
+          <div className="liquid-orb-3" />
+        </div>
         <BrandProvider>
           <CurrencyProvider>
             <PincodeProvider>

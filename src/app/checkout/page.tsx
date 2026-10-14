@@ -86,8 +86,17 @@ export default function CheckoutPage() {
     return (
       <div className="min-h-screen bg-stone-50 flex items-center justify-center p-4 py-12">
         <div className="bg-white rounded-3xl shadow-xl p-8 sm:p-10 text-center max-w-lg w-full border border-stone-200" role="main">
-          <div className="w-20 h-20 rounded-full bg-emerald-100 flex items-center justify-center mx-auto mb-6">
-            <CheckCircle2 size={44} className="text-emerald-600" />
+          <div className="relative h-14 w-48 mx-auto mb-4">
+            <Image
+              src="/images/ramraj-logo.jpg"
+              alt="Ramraj Cotton Official"
+              fill
+              className="object-contain"
+              sizes="200px"
+            />
+          </div>
+          <div className="w-16 h-16 rounded-full bg-emerald-100 flex items-center justify-center mx-auto mb-4">
+            <CheckCircle2 size={36} className="text-emerald-600" />
           </div>
           <span className="text-[10px] font-black uppercase tracking-widest text-[#1d4d2d] bg-[#edf5ee] px-3 py-1 rounded-full inline-block mb-2">
             Payment Verified • Dispatch Initiated
@@ -140,16 +149,27 @@ export default function CheckoutPage() {
     <div className="min-h-screen bg-stone-50 py-10">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="flex items-center gap-4 mb-8">
-          <Link
-            href="/cart"
-            className="p-2.5 bg-white border border-stone-200 rounded-xl hover:bg-stone-100 text-stone-700 transition-colors"
-          >
-            <ArrowLeft size={18} />
-          </Link>
-          <div>
-            <h1 className="text-2xl font-black text-stone-900 tracking-tight">Checkout</h1>
-            <p className="text-xs text-stone-500">Encrypted payment &amp; direct dispatch from Tirupur Mills</p>
+        <div className="flex items-center justify-between gap-4 mb-8">
+          <div className="flex items-center gap-4">
+            <Link
+              href="/cart"
+              className="p-2.5 bg-white border border-stone-200 rounded-xl hover:bg-stone-100 text-stone-700 transition-colors"
+            >
+              <ArrowLeft size={18} />
+            </Link>
+            <div>
+              <h1 className="text-2xl font-black text-stone-900 tracking-tight">Checkout</h1>
+              <p className="text-xs text-stone-500">Encrypted payment &amp; direct dispatch from Tirupur Mills</p>
+            </div>
+          </div>
+          <div className="relative h-11 w-40 hidden sm:block">
+            <Image
+              src="/images/ramraj-logo-header.jpg"
+              alt="Ramraj Cotton"
+              fill
+              className="object-contain object-right"
+              sizes="160px"
+            />
           </div>
         </div>
 

@@ -13,11 +13,20 @@ export default function AboutPage() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Hero */}
         <div className="text-center max-w-3xl mx-auto mb-16">
+          <div className="relative h-16 w-52 mx-auto mb-6 bg-white p-2 rounded-2xl shadow-sm border border-stone-200">
+            <Image
+              src="/images/ramraj-logo.jpg"
+              alt="Ramraj Cotton Original Logo"
+              fill
+              className="object-contain"
+              sizes="220px"
+            />
+          </div>
           <span className="text-xs font-black uppercase tracking-[0.2em] text-[#1d4d2d] bg-[#edf5ee] px-4 py-1.5 rounded-full inline-block mb-4">
             Since 1983 • Avinashi, Tirupur
           </span>
           <h1 className="text-4xl sm:text-5xl font-black text-stone-900 leading-tight mb-6">
-            Dignifying Indian Handlooms & The Sacred Veshti
+            Dignifying Indian Handlooms &amp; The Sacred Veshti
           </h1>
           <p className="text-base text-stone-600 leading-relaxed">
             In 1983, a visionary textile entrepreneur, Shri K.R. Nagarajan, set out with a simple yet revolutionary mission: to restore the pride, elegance, and national dignity of wearing the traditional Indian Dhoti.
@@ -95,6 +104,15 @@ export default function AboutPage() {
         {/* Ramyyam Section */}
         <div className="bg-gradient-to-r from-rose-900 via-rose-800 to-rose-950 rounded-3xl p-8 sm:p-12 text-white shadow-xl mb-16 relative overflow-hidden">
           <div className="max-w-2xl relative z-10">
+            <div className="relative h-12 w-40 mb-4 bg-white/95 p-1.5 rounded-xl">
+              <Image
+                src="/images/ramyyam-logo.jpg"
+                alt="Ramyyam Official Logo"
+                fill
+                className="object-contain object-left"
+                sizes="160px"
+              />
+            </div>
             <span className="text-xs font-black tracking-[0.2em] uppercase text-rose-200 bg-white/10 px-3 py-1 rounded-full">
               From the House of Ramraj Cotton
             </span>

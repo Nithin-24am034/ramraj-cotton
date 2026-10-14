@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import {
   ShoppingBag,
   Menu,
@@ -133,26 +134,42 @@ export default function Navbar() {
           <div className="flex items-center gap-1">
             <button
               onClick={() => setSelectedBrand('ramraj')}
-              className={`px-4 sm:px-6 py-2 text-xs font-black tracking-wider transition-all cursor-pointer flex items-center gap-2 border-b-2 ${
+              className={`px-4 sm:px-6 py-2 text-xs font-black tracking-wider transition-all cursor-pointer flex items-center gap-2.5 border-b-2 ${
                 isRamraj
                   ? 'border-[#2d6a3d] bg-[#1d4d2d] text-white shadow-inner'
                   : 'border-transparent text-stone-400 hover:text-stone-200 hover:bg-stone-800/50'
               }`}
             >
-              <span className="w-2 h-2 rounded-full bg-emerald-400" />
+              <div className="relative w-5 h-5 rounded overflow-hidden shrink-0 bg-white p-0.5">
+                <Image
+                  src="/images/ramraj-logo-header.jpg"
+                  alt="Ramraj Cotton Logo"
+                  fill
+                  className="object-contain"
+                  sizes="20px"
+                />
+              </div>
               <span>RAMRAJ COTTON</span>
               <span className="hidden sm:inline text-[10px] font-normal text-emerald-200/80">(Men &amp; Boys)</span>
             </button>
 
             <button
               onClick={() => setSelectedBrand('ramyyam')}
-              className={`px-4 sm:px-6 py-2 text-xs font-black tracking-wider transition-all cursor-pointer flex items-center gap-2 border-b-2 ${
+              className={`px-4 sm:px-6 py-2 text-xs font-black tracking-wider transition-all cursor-pointer flex items-center gap-2.5 border-b-2 ${
                 isRamyyam
                   ? 'border-rose-500 bg-rose-950 text-rose-100 shadow-inner'
                   : 'border-transparent text-stone-400 hover:text-rose-200 hover:bg-stone-800/50'
               }`}
             >
-              <span className="w-2 h-2 rounded-full bg-rose-400" />
+              <div className="relative w-5 h-5 rounded overflow-hidden shrink-0 bg-white p-0.5">
+                <Image
+                  src="/images/ramyyam-logo.jpg"
+                  alt="Ramyyam Logo"
+                  fill
+                  className="object-contain"
+                  sizes="20px"
+                />
+              </div>
               <span>RAMYYAM</span>
               <span className="hidden sm:inline text-[10px] font-normal text-rose-300/80">(Women &amp; Girls)</span>
             </button>
@@ -193,36 +210,62 @@ export default function Navbar() {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-20">
-            {/* Logo */}
-            <Link href="/" className="flex items-center gap-3 group">
-              <div
-                className={`w-12 h-12 rounded-full flex items-center justify-center shadow-md transition-all ${
-                  isRamyyam
-                    ? 'bg-gradient-to-br from-rose-800 to-rose-950 ring-2 ring-rose-300'
-                    : 'bg-gradient-to-br from-[#1d4d2d] to-[#12281a] ring-2 ring-amber-300'
-                }`}
-              >
-                <span className="text-white font-black text-xl tracking-tight">
-                  {isRamyyam ? 'RY' : 'R'}
-                </span>
-              </div>
-              <div className="leading-none text-left">
-                {isRamyyam ? (
-                  <>
-                    <p className="font-black text-rose-950 text-[1.6rem] tracking-[0.08em]">RAMYYAM</p>
-                    <p className="text-rose-700 text-[9px] font-bold tracking-[0.2em] uppercase">
-                      From House of Ramraj
-                    </p>
-                  </>
-                ) : (
-                  <>
-                    <p className="font-black text-stone-900 text-[1.65rem] tracking-[0.06em]">RAMRAJ</p>
-                    <p className="text-[#2d6a3d] text-[10px] font-bold tracking-[0.22em] uppercase">
-                      Cotton • Since 1983
-                    </p>
-                  </>
-                )}
-              </div>
+            {/* Original Brand Logo */}
+            <Link href="/" className="flex items-center gap-3 group py-1.5" aria-label="Ramraj Cotton & Ramyyam Home">
+              {isRamyyam ? (
+                <div className="flex items-center gap-2.5">
+                  <div className="relative h-12 w-36 sm:w-44">
+                    <Image
+                      src="/images/ramyyam-logo.jpg"
+                      alt="Ramyyam by Ramraj Cotton"
+                      fill
+                      priority
+                      className="object-contain object-left"
+                      sizes="180px"
+                    />
+                  </div>
+                  <span className="hidden sm:inline-block text-[9px] font-black text-rose-900 bg-rose-100 px-2 py-0.5 rounded-full uppercase tracking-widest border border-rose-200">
+                    From Ramraj
+                  </span>
+                </div>
+              ) : isRamraj ? (
+                <div className="flex items-center gap-2">
+                  <div className="relative h-12 w-40 sm:w-52">
+                    <Image
+                      src="/images/ramraj-logo-header.jpg"
+                      alt="Ramraj Cotton – Pure Cotton Traditional Wear"
+                      fill
+                      priority
+                      className="object-contain object-left"
+                      sizes="210px"
+                    />
+                  </div>
+                </div>
+              ) : (
+                <div className="flex items-center gap-2.5 sm:gap-3">
+                  <div className="relative h-11 w-36 sm:w-44">
+                    <Image
+                      src="/images/ramraj-logo-header.jpg"
+                      alt="Ramraj Cotton"
+                      fill
+                      priority
+                      className="object-contain object-left"
+                      sizes="180px"
+                    />
+                  </div>
+                  <div className="hidden sm:block h-7 w-[1.5px] bg-stone-300" />
+                  <div className="hidden sm:block relative h-9 w-28">
+                    <Image
+                      src="/images/ramyyam-logo.jpg"
+                      alt="Ramyyam"
+                      fill
+                      priority
+                      className="object-contain object-left"
+                      sizes="120px"
+                    />
+                  </div>
+                </div>
+              )}
             </Link>
 
             {/* Desktop Navigation Links */}

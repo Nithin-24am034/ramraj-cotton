@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { MapPin, Phone, Mail, Sparkles, Building2, Truck, ShieldCheck, Heart } from 'lucide-react';
 
 export default function Footer() {
@@ -56,15 +57,24 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
           {/* Brand Col 1 */}
           <div className="lg:col-span-2">
-            <div className="flex items-center gap-3 mb-4">
-              <div className="w-11 h-11 rounded-2xl bg-[#1d4d2d] flex items-center justify-center border border-amber-400/40">
-                <span className="text-white font-black text-xl">R</span>
+            <div className="flex flex-wrap items-center gap-4 mb-5">
+              <div className="relative h-14 w-44 bg-white p-2 rounded-2xl shadow-sm border border-stone-800">
+                <Image
+                  src="/images/ramraj-logo.jpg"
+                  alt="Ramraj Cotton Original Logo"
+                  fill
+                  className="object-contain p-1"
+                  sizes="180px"
+                />
               </div>
-              <div>
-                <p className="font-black text-white text-lg tracking-wider">RAMRAJ COTTON</p>
-                <p className="text-amber-400 text-[10px] font-bold tracking-[0.25em] uppercase">
-                  &amp; RAMYYAM ETHNIC WEAR
-                </p>
+              <div className="relative h-12 w-32 bg-white p-1.5 rounded-2xl shadow-sm border border-stone-800">
+                <Image
+                  src="/images/ramyyam-logo.jpg"
+                  alt="Ramyyam Original Logo"
+                  fill
+                  className="object-contain p-1"
+                  sizes="130px"
+                />
               </div>
             </div>
             <p className="text-xs leading-relaxed text-stone-400 mb-5 max-w-sm">

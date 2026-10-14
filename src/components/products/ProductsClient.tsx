@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useMemo, useCallback, useEffect } from 'react';
+import { useSearchParams } from 'next/navigation';
 import { FilterX, SlidersHorizontal, ChevronDown, ChevronUp, X, Sparkles, Check } from 'lucide-react';
 import { products, filterProducts, categories } from '@/lib/products';
 import { FilterState, Category, SortOption, Brand, Occasion, BorderType } from '@/types';
@@ -74,10 +75,14 @@ export default function ProductsClient({
 }) {
   const { formatPrice } = useCurrency();
   const { selectedBrand: activeContextBrand, setSelectedBrand } = useBrand();
+  const searchParams = useSearchParams();
+
+  const queryCategory = searchParams.get('category');
+  const queryBrand = searchParams.get('brand');
 
   const [filters, setFilters] = useState<FilterState>({
-    brand: (initialBrand as Brand) || (activeContextBrand !== 'all' ? activeContextBrand : 'all'),
-    category: (initialCategory as Category) || 'all',
+    brand: (queryBrand as Brand) || (initialBrand as Brand) || (activeContextBrand !== 'all' ? activeContextBrand : 'all'),
+    category: (queryCategory as Category) || (initialCategory as Category) || 'all',
     sizes: [],
     materials: [],
     priceRange: [0, 10000],
@@ -90,13 +95,15 @@ export default function ProductsClient({
 
   // Sync if URL search changes
   useEffect(() => {
-    if (initialCategory) {
-      setFilters((prev) => ({ ...prev, category: initialCategory as Category }));
+    const targetCat = queryCategory || initialCategory;
+    const targetBrand = queryBrand || initialBrand;
+    if (targetCat) {
+      setFilters((prev) => ({ ...prev, category: targetCat as Category }));
     }
-    if (initialBrand) {
-      setFilters((prev) => ({ ...prev, brand: initialBrand as Brand }));
+    if (targetBrand) {
+      setFilters((prev) => ({ ...prev, brand: targetBrand as Brand }));
     }
-  }, [initialCategory, initialBrand]);
+  }, [queryCategory, queryBrand, initialCategory, initialBrand]);
 
   const filtered = useMemo(() => filterProducts(products, filters), [filters]);
 
